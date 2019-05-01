@@ -6,9 +6,9 @@
   "subdomain": "revealjs",
   "main": "js/reveal.js",
   "scripts": {
-    "test": "grunt test",
     "start": "grunt serve",
-    "build": "grunt"
+    "build": "grunt",
+    "clean-modules": "rimraf node_modules package-lock.json"
   },
   "author": {
     "name": "Hakim El Hattab",
@@ -23,21 +23,20 @@
     "node": ">=9.0.0"
   },
   "devDependencies": {
-    "express": "^4.16.2",
+    "express": "^4.16.4",
     "grunt": "^1.0.4",
-    "grunt-cli": "^1.3.2",
     "grunt-autoprefixer": "^3.0.4",
+    "grunt-cli": "^1.3.2",
     "grunt-contrib-connect": "^2.0.0",
     "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-jshint": "^2.0.0",
-    "grunt-contrib-qunit": "^3.1.0",
-    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.0.2",
-    "grunt-zip": "~0.17.1",
+    "grunt-zip": "~0.18.2",
     "load-grunt-tasks": "^4.0.0",
-    "node-sass": "^4.11.0",
-    "mustache": "^2.3.0",
+    "mustache": "^3.0.1",
+    "node-sass": "^4.12.0",
     "socket.io": "^2.2.0"
   },
   "license": "MIT"
