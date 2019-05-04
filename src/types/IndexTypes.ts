@@ -1,8 +1,3 @@
-export type CurrentSort = {
-    direction: "asc" | "desc";
-    field: string;
-}
-
 export type File = {
     group: string;
     title: string;

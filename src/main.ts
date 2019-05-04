@@ -1,7 +1,8 @@
-import * as Reveal from "reveal.js";
+import * as Reveal from "reveal-without-tests";
 import "./styles/presentations.scss";
 
 declare var hljs: any;
+declare var ElapsedTimeBar: any;
 (<any>window).Reveal = Reveal;
 
 const allFeatures = ["ace", "badges", "d3", "hljs", "menu", "timeBar", "titleFooter", "tweets"];
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   Reveal.initialize({
     // Disables the default reveal.js slide layout so that you can use
-		// custom CSS layout
+    // custom CSS layout
     disableLayout: true,
 
     center: false,
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // pausedBarColor: 'rgba(200,0,0,.6)',
     ace: {
       // Event is triggered when a new editor is created.
-      oninit: function(editor: any) {
+      oninit: function (editor: any) {
         editor.setOptions({
           cursorStyle: "wide", // ignored
           fontSize: "25px",
@@ -212,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
       {
         src: "/node_modules/reveal.js/lib/js/classList.js",
-        condition: function() {
+        condition: function () {
           return !document.body.classList;
         }
       },
@@ -258,8 +259,8 @@ document.addEventListener("DOMContentLoaded", () => {
       { src: "/node_modules/reveald3/reveald3.js", condition: () => !disabledPlugins.d3 },
 
       // Copy|Paste Installs
-      { src: "/plugins/badges/badges.js", condition: () => !disabledPlugins.badges },
-      { src: "/plugins/elapsed-time-bar/elapsed-time-bar.js", condition: () => !disabledPlugins.timeBar }
+      { src: "/node_modules/reveal-badges/src/badges.js", condition: () => !disabledPlugins.badges },
+      { src: "/node_modules/reveal-elapsed-time-bar/src/elapsed-time-bar.js", condition: () => !disabledPlugins.timeBar }
     ]
   });
 });
